@@ -5,7 +5,6 @@
 # remove the lines with the validations we want to remove, and eval it.
 
 class Lead < ActiveRecord::Base
-  validates_presence_of :company
 end
 
 fat_free_engine = Rails::Application::Railties.engines.find { |e| e.class == FatFreeCRM::Engine }
@@ -13,3 +12,13 @@ lead_source = File.read File.join(fat_free_engine.config.root, "app", "models", 
 lead_source = lead_source.gsub(/validates_presence_of :first_name.*/, "# removed validates_presence_of :first_name")
 lead_source = lead_source.gsub(/validates_presence_of :last_name.*/, "# removed validates_presence_of :last_name")
 eval lead_source
+
+# Now override/tweak everything else
+
+Lead < ActiveRecord::Base
+  validates_presence_of :company
+  
+  def full_name(format = nil)
+    company
+  end
+end
