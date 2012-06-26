@@ -15,7 +15,7 @@ eval lead_source
 
 # Now override/tweak everything else
 
-Lead < ActiveRecord::Base
+class Lead < ActiveRecord::Base
   validates_presence_of :company
   
   def full_name(format = nil)
