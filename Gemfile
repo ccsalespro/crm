@@ -9,6 +9,10 @@ gem 'pg'
 
 gem 'fat_free_crm', :git => 'git://github.com/fatfreecrm/fat_free_crm.git'
 
+group :development do
+  gem 'thin'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
