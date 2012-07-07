@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528102124) do
+ActiveRecord::Schema.define(:version => 20120702234116) do
 
   create_table "account_contacts", :force => true do |t|
     t.integer  "account_id"
@@ -231,15 +231,15 @@ ActiveRecord::Schema.define(:version => 20120528102124) do
     t.integer  "user_id"
     t.integer  "campaign_id"
     t.integer  "assigned_to"
-    t.string   "first_name",       :limit => 64,  :default => "",       :null => false
-    t.string   "last_name",        :limit => 64,  :default => "",       :null => false
+    t.string   "first_name",       :limit => 128, :default => "",       :null => false
+    t.string   "last_name",        :limit => 128, :default => "",       :null => false
     t.string   "access",           :limit => 8,   :default => "Public"
     t.string   "title",            :limit => 64
-    t.string   "company",          :limit => 64
+    t.string   "company",          :limit => 128
     t.string   "source",           :limit => 32
     t.string   "status",           :limit => 32
     t.string   "referred_by",      :limit => 64
-    t.string   "email",            :limit => 64
+    t.string   "email",            :limit => 128
     t.string   "alt_email",        :limit => 64
     t.string   "phone",            :limit => 32
     t.string   "mobile",           :limit => 32

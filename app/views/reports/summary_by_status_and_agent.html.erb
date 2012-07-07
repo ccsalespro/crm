@@ -45,17 +45,16 @@ table.report td {
   <caption>Lead Summary by Status and Agent</caption>
   <thead>
     <tr>
-      <th></th>
-      <% Setting.lead_status.each do |s| %>
-        <th><%= s %></th>
+      <% @report.header_row.each do |f| %>
+        <th><%= f %></th>
       <% end %>
     </tr>
   </thead>
   <tfoot>
-    <%= render :partial => "summary_by_status_and_agent_row", :locals => { :row => @report_rows[-1] } %>
+    <%= render :partial => "summary_by_status_and_agent_row", :locals => { :row => @report.footer_row } %>
   </tfoot>
   <tbody>
-    <% @report_rows[0..-2].each do |row| %>
+    <% @report.body_rows.each do |row| %>
       <%= render :partial => "summary_by_status_and_agent_row", :locals => { :row => row } %>
     <% end %>
   </tbody>
