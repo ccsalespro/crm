@@ -570,6 +570,38 @@ ALTER SEQUENCE fields_id_seq OWNED BY fields.id;
 
 
 --
+-- Name: lead_status_changes; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE lead_status_changes (
+    id integer NOT NULL,
+    lead_id integer NOT NULL,
+    assigned_to integer,
+    status character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: lead_status_changes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE lead_status_changes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: lead_status_changes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE lead_status_changes_id_seq OWNED BY lead_status_changes.id;
+
+
+--
 -- Name: leads; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1569,6 +1601,13 @@ ALTER TABLE ONLY fields ALTER COLUMN id SET DEFAULT nextval('fields_id_seq'::reg
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY lead_status_changes ALTER COLUMN id SET DEFAULT nextval('lead_status_changes_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY leads ALTER COLUMN id SET DEFAULT nextval('leads_id_seq'::regclass);
 
 
@@ -1751,6 +1790,14 @@ ALTER TABLE ONLY field_groups
 
 ALTER TABLE ONLY fields
     ADD CONSTRAINT fields_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: lead_status_changes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY lead_status_changes
+    ADD CONSTRAINT lead_status_changes_pkey PRIMARY KEY (id);
 
 
 --
@@ -2196,6 +2243,22 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
+-- Name: lead_status_changes_assigned_to_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY lead_status_changes
+    ADD CONSTRAINT lead_status_changes_assigned_to_fkey FOREIGN KEY (assigned_to) REFERENCES users(id);
+
+
+--
+-- Name: lead_status_changes_lead_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY lead_status_changes
+    ADD CONSTRAINT lead_status_changes_lead_id_fkey FOREIGN KEY (lead_id) REFERENCES leads(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -2306,3 +2369,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120702232538');
 INSERT INTO schema_migrations (version) VALUES ('20120702233528');
 
 INSERT INTO schema_migrations (version) VALUES ('20120702234116');
+
+INSERT INTO schema_migrations (version) VALUES ('20120707222054');

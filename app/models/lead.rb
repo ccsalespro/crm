@@ -21,4 +21,15 @@ class Lead < ActiveRecord::Base
   def full_name(format = nil)
     company
   end
+  
+  before_save :log_status_change
+  
+  has_many :lead_status_changes, :dependent => :delete_all
+  
+  private
+    def log_status_change
+      if status_changed? || assigned_to_changed?
+        lead_status_changes.create! :status => status, :assigned_to => assigned_to
+      end
+    end  
 end
