@@ -1013,7 +1013,9 @@ CREATE TABLE users (
     updated_at timestamp without time zone NOT NULL,
     admin boolean DEFAULT false NOT NULL,
     suspended_at timestamp without time zone,
-    single_access_token character varying(255)
+    single_access_token character varying(255),
+    fax character varying(255),
+    website character varying(255)
 );
 
 
@@ -2371,3 +2373,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120702233528');
 INSERT INTO schema_migrations (version) VALUES ('20120702234116');
 
 INSERT INTO schema_migrations (version) VALUES ('20120707222054');
+
+INSERT INTO schema_migrations (version) VALUES ('20120707234042');
