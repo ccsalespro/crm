@@ -1,0 +1,32 @@
+# Main and Admin Tabs
+#------------------------------------------------------------------------------
+:tabs: [
+  { :active : true,  :text : :tab_dashboard,     :url : { :controller : "home"           } },
+  { :active : false, :text : :tab_tasks,         :url : { :controller : "tasks"          } },
+  { :active : false, :text : :tab_campaigns,     :url : { :controller : "campaigns"      } },
+  { :active : false, :text : :tab_leads,         :url : { :controller : "leads"          } },
+  { :active : false, :text : :tab_accounts,      :url : { :controller : "accounts"       } },
+  { :active : false, :text : :tab_contacts,      :url : { :controller : "contacts"       } }
+]
+
+# Lead Status and Source.
+#------------------------------------------------------------------------------
+lead_status:
+ - Import
+ - Prospect
+ - Met Owner
+ - Obtained Statement
+ - Presented Analysis
+ - Closed Yes
+ - Closed No
+ - Closed Bad Information
+
+
+# Default records permissions
+#------------------------------------------------------------------------------
+# Set the defaults permission for new records. Possible values are:
+#   Private -- private access, only for the creator of the record.
+#   Public  -- public access, share with everyone. This is the default.
+#   Shared  -- shared with selected accounts, should be selected by the user.
+#
+:default_access: "Private"
