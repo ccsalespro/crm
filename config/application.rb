@@ -60,7 +60,12 @@ module CrmMm
     # Enable the asset pipeline
     config.assets.enabled = true
     
-    config.assets.precompile += ['print.css', 'calendar_date_select/default']
+    # Don't initialize Rails environment
+    config.assets.initialize_on_precompile = false    
+    
+    config.assets.precompile += ['print.css'] + 
+      Dir["vendor/assets/javascripts/**/*.*"].map { |s| s.gsub("vendor/assets/javascripts/", "") } +
+      Dir["vendor/assets/stylesheets/**/*.*"].map { |s| s.gsub("vendor/assets/stylesheets/", "") }
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
