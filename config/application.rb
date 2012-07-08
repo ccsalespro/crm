@@ -63,9 +63,12 @@ module CrmMm
     # Don't initialize Rails environment
     config.assets.initialize_on_precompile = false    
     
-    config.assets.precompile += ['print.css'] + 
-      Dir["vendor/assets/javascripts/**/*.*"].map { |s| s.gsub("vendor/assets/javascripts/", "") } +
-      Dir["vendor/assets/stylesheets/**/*.*"].map { |s| s.gsub("vendor/assets/stylesheets/", "") }
+    config.assets.precompile += ['print.css']
+
+    fat_free_engine = Railties.engines.find { |e| e.class == FatFreeCRM::Engine }
+    asset_path = "#{fat_free_engine.config.root}/vendor/assets"
+    config.assets.precompile += Dir["#{asset_path}/javascripts/**/*.*"].map { |s| s.gsub("#{asset_path}/javascripts/", "") }
+    config.assets.precompile += Dir["#{asset_path}/stylesheets/**/*.*"].map { |s| s.gsub("#{asset_path}/stylesheets/", "") }
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
