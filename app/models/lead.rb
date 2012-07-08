@@ -22,7 +22,8 @@ class Lead < ActiveRecord::Base
     company
   end
   
-  before_save :log_status_change
+  before_update :log_status_change
+  after_create :log_initial_status
   
   has_many :lead_status_changes, :dependent => :delete_all
   
@@ -32,4 +33,8 @@ class Lead < ActiveRecord::Base
         lead_status_changes.create! :status => status, :assigned_to => assigned_to
       end
     end  
+    
+    def log_initial_status
+      lead_status_changes.create! :status => status, :assigned_to => assigned_to
+    end
 end
