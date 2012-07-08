@@ -60,7 +60,7 @@ module CrmMm
     # Enable the asset pipeline
     config.assets.enabled = true
     
-    config.assets.precompile += ['print.css']
+    config.assets.precompile += ['print.css', 'calendar_date_select/default']
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
