@@ -30,3 +30,12 @@ lead_status:
 #   Shared  -- shared with selected accounts, should be selected by the user.
 #
 :default_access: "Private"
+
+# Require last name on Leads and Contacts
+#------------------------------------------------------------------------------
+# If this validation is disabled, records will only require a first name.
+#
+:require_last_names: false
+
+# Only disables on leads
+:require_first_names: false

@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/fatfreecrm/fat_free_crm.git
-  revision: 1497b2d4c316dc60053659673dd6f017135615b0
+  remote: git://github.com/ccsalespro/fat_free_crm.git
+  revision: 0d52c734c9f9f2c326eca30a00a1a0c37f4abcd6
+  branch: ccsalespro
   specs:
     fat_free_crm (0.11.3)
       acts-as-taggable-on (~> 2.2.1)
@@ -101,7 +102,7 @@ GEM
     eventmachine (0.12.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffaker (1.14.0)
+    ffaker (1.15.0)
     haml (3.1.6)
     highline (1.6.12)
     hike (1.2.1)
@@ -174,7 +175,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     responds_to_parent (1.1.0)
-    sass (3.1.19)
+    sass (3.1.20)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -194,7 +195,7 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.15.3)
+    thor (0.15.4)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot

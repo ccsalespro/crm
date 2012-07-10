@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'pg'
 
-gem 'fat_free_crm', :git => 'git://github.com/fatfreecrm/fat_free_crm.git'
+gem 'fat_free_crm', :git => 'git://github.com/ccsalespro/fat_free_crm.git', :branch => 'ccsalespro'
 
 group :development do
   gem 'capistrano'
