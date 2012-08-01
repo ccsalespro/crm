@@ -9,7 +9,7 @@
       %tr
         %td
           .label.top #{t :job_title}:
-          = f.text_field :title
+          = f.select :title, ["", "Owner", "President", "Manager", "Non-Decision Maker"]
         %td= spacer
         %td= spacer
       %tr
