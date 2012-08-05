@@ -11,8 +11,8 @@
 # Lead Status and Source.
 #------------------------------------------------------------------------------
 lead_status:
- - Import
  - Prospect
+ - Import
  - Met Owner
  - Obtained Statement
  - Presented Analysis
