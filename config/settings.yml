@@ -8,6 +8,21 @@
   { :active : false, :text : :tab_contacts,      :url : { :controller : "contacts"       } }
 ]
 
+task_category:
+  - :obtain_statement
+  - :present_cost_analysis
+  - :pick_up_paperwork
+  - :call
+  - :email
+  - :follow_up
+
+task_bucket:
+  - :overdue
+  - :due_asap
+  - :due_today
+  - :due_tomorrow
+
+
 # Lead Status and Source.
 #------------------------------------------------------------------------------
 lead_status:
