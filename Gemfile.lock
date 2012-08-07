@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ccsalespro/fat_free_crm.git
-  revision: 0d52c734c9f9f2c326eca30a00a1a0c37f4abcd6
+  revision: c2555bc391b47688e15d37daadd238c69bd28a86
   branch: ccsalespro
   specs:
     fat_free_crm (0.11.3)
@@ -62,8 +62,8 @@ GEM
     acts-as-taggable-on (2.2.2)
       rails (~> 3.0)
     acts_as_commentable (3.0.1)
-    acts_as_list (0.1.6)
-    addressable (2.2.8)
+    acts_as_list (0.1.7)
+    addressable (2.3.2)
     ajax-chosen-rails (0.2.0)
       chosen-rails_ffcrm
       railties (~> 3.0)
@@ -112,7 +112,7 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
-    json (1.7.3)
+    json (1.7.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)

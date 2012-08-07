@@ -9,6 +9,10 @@ Lead.class_eval do
   after_create :log_initial_status
   
   has_many :lead_status_changes, :dependent => :delete_all
+
+  def convert
+    update_attribute(:status, "Closed Yes")
+  end  
   
   private
     def log_status_change
